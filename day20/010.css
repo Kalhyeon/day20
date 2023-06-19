@@ -1,0 +1,4 @@
+#img_slider {width: 600px; border: 1px solid red;}
+#img_slider div:first-of-type {height: 250px;}
+#img_slider img {width: 600px;}
+.h_center {display: flex; justify-content: center;}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS 객체</title>
+</head>
+<body>
+  <script>
+    // 함수. 메서드는 객체에 소속된 함수
+    // 자바에서는 함수 === 메서드
+    function aaa() {
+      console.log('aaa');
+    }
+    const person = {
+      name: '홍길동',
+      age: 20,
+      print: function() {
+        // 함수의 이름은 생락할 수 있다 => 익명 함수
+        // 참조 변수의 이름은 생략할 수 없다.
+        alert(person.name);
+        alert(person.age);
+      }
+    };
+    // 메서드 호출
+    person.print();
+  </script>
+</body>
+</html>

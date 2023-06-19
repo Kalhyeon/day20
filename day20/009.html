@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #img_slider {width: 600px; border: 1px solid red;}
+    #img_slider div:first-of-type {height: 250px;} /* id img_slider 안의 첫번째 div */
+    #img_slider img {width: 600px;}
+    .h_center {display: flex; justify-content: center;}
+  </style>
+</head>
+<body>
+  <div id="img_slider">
+    <div>
+      <img src="img/la.jpg" id = "img">
+    </div>
+    <div class="h_center">
+      <button id="prev">이전으로</button>
+      <button id="next">다음으로</button>
+    </div>
+  </div>
+  <script>
+    const images = ['img/la.jpg','img/chicago.jpg','img/ny.jpg'];
+    let index = 0;
+    const prev = document.querySelector('#prev');
+    const img = document.querySelector('#img');
+    prev.onclick = function() {
+      // 내가 작성한 다음 실행은 JS 에게 맡긴다 => callback 함수
+      index--;
+      if(index < 0)
+        index = 2;
+      img.setAttribute('src',images[index]);
+    }
+    document.querySelector('#next').onclick = function() {
+      index++;
+      if(index > 2)
+        index = 0;
+      img.setAttribute('src',images[index]);
+    }
+  </script>
+</body>
+</html>

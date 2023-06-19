@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이미지 슬라이더</title>
+  <style>
+    #img-slider {width: 600px; border: 1px solid red;}
+    #img-slider img {width: 600px;}
+    .h-center {display: flex; justify-content: center;}
+  </style>
+</head>
+<body>
+  <div id="img-slider">
+    <img src="img/la.jpg">
+    <div class="h-center">
+      <input type="button" value="이전으로" onclick="alert('까꿍');">
+      <input type="button" value="다음으로" id="next">
+    </div>
+  </div>
+  <script>
+    // 요소는 tag, 속성, 내용
+    // 일반 요소는 내용을 innerHTML, input 요소는 value 라고 한다.
+    // JS 의 DOM 모델
+    const next = document.querySelector('#next');
+    console.log(next);
+    console.log(typeof next); // object
+    // 객체는 필드와 메서드를 가진다.
+    next.value="다음으로 갑시다";
+    next.type="text";
+  </script>
+</body>
+</html>

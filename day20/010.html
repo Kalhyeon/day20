@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이미지 슬라이더 작성 : 스타일을 분리</title>
+  <link rel="stylesheet" href="../day20/010.css">
+</head>
+<body>
+  <div id="img_slider">
+    <div>
+      <img src="img/la.jpg" id = "img">
+    </div>
+    <div class="h_center">
+      <button id="prev">이전으로</button>
+      <button id="next">다음으로</button>
+    </div>
+  </div>
+  <script>
+    const images = ['img/la.jpg','img/chicago.jpg','img/ny.jpg'];
+    let index = 0;
+    const prev = document.querySelector('#prev');
+    const img = document.querySelector('#img');
+    prev.onclick = function() {
+      index--;
+      if(index < 0)
+        index = 2;
+      img.setAttribute('src',images[index]);
+    }
+    document.querySelector('#next').onclick = function() {
+      index++;
+      if(index > 2)
+        index = 0;
+      img.setAttribute('src',images[index]);
+    }
+  </script>
+</body>
+</html>
